@@ -1,0 +1,29 @@
+---
+title: "Hayley Lenamon"
+about:
+  template: jolla
+  image: githubme.jpg
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/hayleylenamon/
+    - icon: github
+      text: Github
+      href: https://github.com/hayleylen 
+---
+
+Hi, I'm Hayley and I am a student in Washington, DC. 
+
+## Education
+
+The George Washington University 
+
+B.A. International Affairs, Journalism & Mass Communication
+
+## Skills
+
+I have none
+
+
+
+
