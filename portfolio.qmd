@@ -1,11 +1,18 @@
 ---
 title: "Portfolio"
-website:
-  favicon: logoPC.jpg 
-  site-url: https://www.papercitymag.com/culture/dallas-fort-worth-holiday-light-shows-safe-drive-through/
-  website:
-    favicon: logoPC.jpg
-    site-url: https://www.papercitymag.com/arts/performing-arts/dallas-actor-akron-watson-theater-broadway-hamilton/
+about:
+  template: marquee
+  image: books.jpeg
+  links:
+    - icon: logoPC.jpg
+      text: PaperCity Magazine | From Broadway to Hollywood — How the Pandemic Altered One Dallas Actor’s Path
+      href: https://www.papercitymag.com/arts/performing-arts/dallas-actor-akron-watson-theater-broadway-hamilton/
+    - icon: logoPC.jpg
+      text: PaperCity Magazine | Dallas-Fort Worth Light Shows to Safely Brighten Up Your Holiday Season
+      href: https://www.papercitymag.com/culture/dallas-fort-worth-holiday-light-shows-safe-drive-through/ 
+    - icon: PUC.jpeg 
+      text: PUC | Research Paper from Historical Memory and Human Rights (written in Spanish)
+      href: https://docs.google.com/document/d/1ltjbjoIgrQy2pqzWQ9DeRt0V3y5w0yHdoB_VsLesYY8/edit?usp=sharing 
     
 ---
 
