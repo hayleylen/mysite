@@ -1,9 +1,13 @@
 ---
-title: "Things About Me"
+title: "About"
+about:
+  template: broadside
+  image: IMG_1998.jpeg
 ---
 
-About this site
 
-```{r}
-1 + 1
-```
+I'm Hayley. I am a fourth year student at The George Washington University, double-majoring in International Affairs and Journalism & Mass Communication. I am a hardworking individual striving towards opportunities to maximize my knowledge of foreign relations and economic issues, as well as the ways in which news and information are spread to people around the world. 
+
+My interests include hiking, reading, watching films, going to theater productions, & anything Elvis. 
+
+

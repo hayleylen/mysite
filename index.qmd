@@ -12,7 +12,7 @@ about:
       href: https://github.com/hayleylen 
 ---
 
-Hi, I'm Hayley and I am a student in Washington, DC. 
+Hi, I'm Hayley and I'm a student in Washington, DC. 
 
 ## Education
 
@@ -22,7 +22,15 @@ B.A. International Affairs, Journalism & Mass Communication
 
 ## Skills
 
-I have none
+Critical Thinking
+
+Strong Research/Writing
+
+Public Speaking 
+
+Customer Service 
+
+Spanish (Working Proficiency)
 
 
 

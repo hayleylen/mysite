@@ -1,5 +1,11 @@
 ---
 title: "Portfolio"
+website:
+  favicon: logoPC.jpg 
+  site-url: https://www.papercitymag.com/culture/dallas-fort-worth-holiday-light-shows-safe-drive-through/
+  website:
+    favicon: logoPC.jpg
+    site-url: https://www.papercitymag.com/arts/performing-arts/dallas-actor-akron-watson-theater-broadway-hamilton/
+    
 ---
 
-This is my portfolio page
