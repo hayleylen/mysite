@@ -3,6 +3,11 @@ project:
   output-dir: docs
 
 website:
+  page-footer:
+    left: "Copyright 2022. HAL."
+    right:
+    - icon: github
+      href: https://github.com
   title: "Hayley Lenamon"
   navbar:
     left:
@@ -10,19 +15,12 @@ website:
         text: Home
       - about.qmd
       - portfolio.qmd
+      - walkthrough.qmd 
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
-page-footer:
-  left: "Copyright 2022. Test."
-  right:
-    - icon: github
-      href: https://github.com
-    - icon: linkedin
-      href: https://www.linkedin.com/in/hayleylenamon/
 
 

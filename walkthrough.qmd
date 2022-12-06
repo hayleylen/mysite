@@ -1,0 +1,132 @@
+---
+title: "Analysis Walkthrough"
+author: "Hayley Lenamon"
+format:
+  html:
+    self-contained: true
+    code-fold: true
+    code-tools: true
+    
+---
+First I loaded the libraries. 
+
+```{r}
+library(tidyverse)
+library(nycflights13) # <- make sure to install this package 
+library(tigris)
+library(tidycensus)
+library(tmap)
+library(tmaptools)
+library(janitor)
+library(writexl)
+library(here)
+options(tigris_class = "sf")
+```
+To create a function that solved the sum of two numbers, I had to first code for the actual function. 
+
+```{r}
+sum_function <- function(number_one, number_two){sum <- number_one + number_two
+return(sum)}
+sum_function(15,9384)
+```
+
+Then I created a function that returns the mean of a list of numbers fed to it.
+
+```{r}
+list_mean <- c(12,53,62,28,16)
+resultmean <- mean(list_mean)
+print(resultmean)
+```
+
+To expand on the function above, and instead of just returning the mean number alone, I made it return the sentence:
+*"The mean is ___"*. 
+
+```{r}
+list_mean <- c(12,53,62,28,16)
+resultmean <- mean(list_mean)
+mean_function <- function(resultmean)
+output <- paste0("The mean is", mean_function)
+print(output) 
+```
+
+For the next two questions, I used the `flights` dataset from the package `nycflights13`. It contains records of individual airline flights departing at New York's three metro airports, JFK, LaGuardia (LGA) and Newark (EWR).
+
+Here is the data I loaded to complete the following questions: 
+
+```{r}
+flights <- nycflights13::flights
+head(flights)
+```
+
+I created a function that filters the data frame to only include records from a single originating airport (column name `origin`). I chose to enter the origin airport JFK and return all the records from just that airport.
+
+```{r}
+flight_df <- function(origin_name){records <- flights %>%
+  filter(origin == origin_name) 
+return(records)}
+
+flight_df("JFK")
+```
+
+Next, I filtered the data to only include records from a single originating airport (column name `origin`), and then counted the results by airline (`carrier`) to show how many flights each airline has from that airport.
+
+```{r}
+airport_df <- function(origin_name){
+  records <- flights %>%
+    filter(origin == origin_name) %>%
+    group_by(carrier) %>%
+    count(carrier)
+  return(records)}
+
+airport_df("JFK")
+```
+
+The remainder of the assignment focused on using tidycensus. I filled in the necessary code below, and downloaded data on populations with bachelor's and graduate/professional degrees.
+
+First step to using tidycensus to interact with the U.S. Census Bureau's API is loading your API Key credential. I requested my personal API key from the Census. 
+
+```{r}
+census_api_key("484eb3b6ea033e642bd5d342eed42e522a86fb3e", install=TRUE)
+```
+
+The census variables necessary for this assignment  are provided here. 
+
+```{r}
+myvars <- c(education_total = "B06009_001",
+            education_bachelors = "B06009_005",
+            education_gradprofess = "B06009_006")
+```
+
+Now, using the `get_acs()` function in tidycensus, I pulled down the state-level data for those variables as well as the geospatial/mapping data tied to each state. 
+
+```{r}
+statelevel <- get_acs(variables = c(myvars), geography = "state", geometry = TRUE, output = "wide")
+```
+
+To make things a little cleaner, I used the `select()` function to remove the three "margin of error" columns, which are denoted with their ending "M".
+
+```{r}
+selected <- statelevel %>% select(-ends_with("M"))
+```
+
+Using the `mutate()` function, I created a new column that contains the percentage of people with a bachelor's or higher degree for each state. To do this I first combined cthose categories before making the calculation against the total population column.
+
+```{r}
+mutated_data <- selected %>% mutate(number_bach_higher = education_bachelorsE + education_gradprofessE)
+
+mutated_data <- mutated_data %>% mutate(percent_bach_higher = number_bach_higher/education_totalE * 100)
+```
+
+The next step was to make a map of the continental U.S. showing the new percentage measure. First, I filtered the data to remove Alaska, Hawaii and Puerto Rico.
+
+```{r}
+selected_filtered <- selected %>% filter(NAME != "Hawaii")%>% filter(NAME != "Alaska") %>% filter(NAME != "Puerto Rico") 
+```
+
+Now, using the tmap() package, I created a shaded map for the continental U.S. that shows the percentage of Bachelor's-and-higher populations in each state. This was the final step of the assignment. 
+
+```{r}
+tm_shape(selected_filtered) + tm_polygons("percent_bach_higher", id = "GEOID", col = "lightblue")
+```
+```
+
