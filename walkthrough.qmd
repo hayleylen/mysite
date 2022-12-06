@@ -6,127 +6,81 @@ format:
     self-contained: true
     code-fold: true
     code-tools: true
-    
 ---
-First I loaded the libraries. 
 
-```{r}
+To begin, I loaded the necessary libraries. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Load libraries 
+library(tidyverse) 
+library(janitor) 
+library(readxl) 
+library(scales)
+library(lubridate)
 library(tidyverse)
-library(nycflights13) # <- make sure to install this package 
 library(tigris)
-library(tidycensus)
+library(sf)
 library(tmap)
 library(tmaptools)
+library(htmltools)
 library(janitor)
-library(writexl)
+library(rmapshaper)
 library(here)
 options(tigris_class = "sf")
 ```
-To create a function that solved the sum of two numbers, I had to first code for the actual function. 
+
+The data used for this assignment includes Georgia election results by county for U.S. Senate and Governor in 2022, President in 2020, and then some other socioeconomic factors.
+
+The first step is to load in the data, which is stored in the `ga_votes.xlsx` Excel file that's included in this repository. There are two tabs - one contains the senate results, and one contains the governor results. Below is the information I used to import the GA election data. 
 
 ```{r}
-sum_function <- function(number_one, number_two){sum <- number_one + number_two
-return(sum)}
-sum_function(15,9384)
+senate_results <- read_excel(here("ga_votes.xlsx"), sheet = "senate")
+
+governor_results <- read_excel(here("ga_votes.xlsx"), sheet = "governor")
 ```
 
-Then I created a function that returns the mean of a list of numbers fed to it.
+I created a column/bar chart for the Senate race that shows how many counties the Republican candidate did better vs. worse than Trump.
 
 ```{r}
-list_mean <- c(12,53,62,28,16)
-resultmean <- mean(list_mean)
-print(resultmean)
+ggplot(data=senate_results, aes(x=factor(is_r_above_trump))) + geom_bar()
+
 ```
 
-To expand on the function above, and instead of just returning the mean number alone, I made it return the sentence:
-*"The mean is ___"*. 
+Then I did the same as Question 1, just for the race for Governor.
 
 ```{r}
-list_mean <- c(12,53,62,28,16)
-resultmean <- mean(list_mean)
-mean_function <- function(resultmean)
-output <- paste0("The mean is", mean_function)
-print(output) 
+ggplot(data=governor_results, aes(x=factor(is_r_above_trump))) + geom_bar()
+
 ```
 
-For the next two questions, I used the `flights` dataset from the package `nycflights13`. It contains records of individual airline flights departing at New York's three metro airports, JFK, LaGuardia (LGA) and Newark (EWR).
-
-Here is the data I loaded to complete the following questions: 
+For the Senate race again, I created a chart that shows the top 10 biggest drops between the Republican candidate and Trump (i.e. the 10 counties with the most substantial negative numbers in `pct_r_above_trump`). I sliced off a certain number of rows using the `head()` function. 
 
 ```{r}
-flights <- nycflights13::flights
-head(flights)
+no3 <- arrange(senate_results, pct_r_above_trump)
+top10senate <- no3 %>% head(10)
+
+ggplot(data=top10senate, aes(x=factor(pct_r_above_trump))) + geom_bar() 
 ```
 
-I created a function that filters the data frame to only include records from a single originating airport (column name `origin`). I chose to enter the origin airport JFK and return all the records from just that airport.
+Then I created a chart that shows the top 10 counties highest margins of victory for the Democratic candidate for Senate. To do that I compared the Democratic candidate's percentage (pct_d\_2022) with the Republican's (pct_r\_2022) to calculate the margin of victory for each county.
 
 ```{r}
-flight_df <- function(origin_name){records <- flights %>%
-  filter(origin == origin_name) 
-return(records)}
+senate_margin <- senate_results %>% mutate(dem_margin = pct_d_2022 - pct_r_2022)
+no4 <- arrange(senate_margin, dem_margin)
+top10_senate_margin <- no4 %>% head(10)
 
-flight_df("JFK")
+ggplot(data=top10_senate_margin, aes(x=factor(dem_margin))) + geom_bar()
+
 ```
 
-Next, I filtered the data to only include records from a single originating airport (column name `origin`), and then counted the results by airline (`carrier`) to show how many flights each airline has from that airport.
+Then I did the same as Q4, only this time for the race for Governor.
 
 ```{r}
-airport_df <- function(origin_name){
-  records <- flights %>%
-    filter(origin == origin_name) %>%
-    group_by(carrier) %>%
-    count(carrier)
-  return(records)}
+gov_margin <- governor_results %>% mutate(dem_margin = pct_d_2022 - pct_r_2022)
+no5 <- arrange(gov_margin, dem_margin)
+top10_gov_margin <- no5 %>% head(10)
 
-airport_df("JFK")
+ggplot(data=top10_gov_margin, aes(x=factor(dem_margin))) + geom_bar()
+
 ```
-
-The remainder of the assignment focused on using tidycensus. I filled in the necessary code below, and downloaded data on populations with bachelor's and graduate/professional degrees.
-
-First step to using tidycensus to interact with the U.S. Census Bureau's API is loading your API Key credential. I requested my personal API key from the Census. 
-
-```{r}
-census_api_key("484eb3b6ea033e642bd5d342eed42e522a86fb3e", install=TRUE)
-```
-
-The census variables necessary for this assignment  are provided here. 
-
-```{r}
-myvars <- c(education_total = "B06009_001",
-            education_bachelors = "B06009_005",
-            education_gradprofess = "B06009_006")
-```
-
-Now, using the `get_acs()` function in tidycensus, I pulled down the state-level data for those variables as well as the geospatial/mapping data tied to each state. 
-
-```{r}
-statelevel <- get_acs(variables = c(myvars), geography = "state", geometry = TRUE, output = "wide")
-```
-
-To make things a little cleaner, I used the `select()` function to remove the three "margin of error" columns, which are denoted with their ending "M".
-
-```{r}
-selected <- statelevel %>% select(-ends_with("M"))
-```
-
-Using the `mutate()` function, I created a new column that contains the percentage of people with a bachelor's or higher degree for each state. To do this I first combined cthose categories before making the calculation against the total population column.
-
-```{r}
-mutated_data <- selected %>% mutate(number_bach_higher = education_bachelorsE + education_gradprofessE)
-
-mutated_data <- mutated_data %>% mutate(percent_bach_higher = number_bach_higher/education_totalE * 100)
-```
-
-The next step was to make a map of the continental U.S. showing the new percentage measure. First, I filtered the data to remove Alaska, Hawaii and Puerto Rico.
-
-```{r}
-selected_filtered <- selected %>% filter(NAME != "Hawaii")%>% filter(NAME != "Alaska") %>% filter(NAME != "Puerto Rico") 
-```
-
-Now, using the tmap() package, I created a shaded map for the continental U.S. that shows the percentage of Bachelor's-and-higher populations in each state. This was the final step of the assignment. 
-
-```{r}
-tm_shape(selected_filtered) + tm_polygons("percent_bach_higher", id = "GEOID", col = "lightblue")
-```
-```
-
