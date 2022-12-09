@@ -1,0 +1,73 @@
+---
+title: "Academic Paper"
+author: "Hayley Lenamon"
+format:
+  html:
+    self-contained: true
+    code-fold: true
+    code-tools: true
+---
+
+*In the fall 2022 semester, I wrote a research paper for my U.S. Foreign Policy Since WWII class regarding the Alliance for Progress. Specifically, my paper argues how the AFP had minimal success in Chile under the Frei administration.* 
+
+*Read below.*
+
+The Alliance for Progress (AFP) created under the Kennedy administration in 1961 and continued during the Johnson administration sought to improve relations between the United States and Latin America by promoting economic and developmental reform in the region. The foreign policy goals of the US in the 1960s attempted to offer regionally focused aid and build new powerful ties with Latin American countries in the hopes of preventing the spread of communism. The United States' mission in creating the Alliance for Progress had minimal success in Latin America, specifically in Chile, which was originally highlighted as the Alliance’s “model” country. The Alliance for Progress was minimally effective in Chile because of US economic overreliance, the inability to enact legitimate social reform, and the extent to which covert action was used to prevent communism or ‘another Cuba’ without understanding regional differences in Latin America. 
+
+The implementation of the Alliance in Chile led to a negative dependency of Chile’s economy on US aid packages, hurting the administration of Eduardo Frei and Chile’s overall economic power. US businessmen and private investors failed to understand or predict political pressures in Latin America. After the US presidential transition to Johnson, Frei’s drastic reform goals did not match with Johnson’s new strategic plans in Latin America involving political interests and democracy promotion. While the money coming into Chile from the US allowed Frei to create meaningful change in areas like education, it made it nearly impossible for Chile to stand alone. Economic reliance on the US heightened the threat of socialist-candidate Salvador Allende, who hoped to break economic ties with the US and nationalize Chile’s main industries. Prior to the 1964 elections in Chile, President Alessandri communicated with US officials regarding aid and the election’s impact on the Alliance’s success. A telegram from the embassy in Chile to the US Department of State in June of 1964 detailed Alessandri’s plea that the US give an additional $15 million of aid to Chile. Alessandri’s rationale for the money was to contribute to the cause against Allende, believing that if Allende was to win the election, Chile may be led in a similar direction to Cuba. Only one month later, in a memorandum from Bundy (the President’s Special Assistant for National Security Affairs) to President Johnson, information regarding the polls of the Chilean presidential candidates showed that Eduardo Frei was in the lead against Allende. However, Alessandi was continuing to emphasize that even if Allende was to win, the US should keep an open mind and not cut off financial assistance to Chile. As evidenced, the Alliance's aid packages to Chile were heavily relied upon, and because of the high stakes of the 1964 presidential election in Chile, the US agreed to continuing aid and increased their involvement in Chile’s economic and political structures. 
+
+Further indicators that US financial aid to Chile proved to be negative occurred under the administration of Frei upon his win in September of 1964. John Joseph Jova, an American diplomat who served as the Deputy Chief of Mission to the US Embassy to Chile under ambassador Charles W. Cole, sent a telegram in November of 1964 stating that Frei emphasized the continuation of US financial assistance, wanting the US government to commit to continued aid throughout 1965. Requesting millions of dollars and outlining how this would fare in the Chilean business climate, Frei was emphatic that the aid provided under the AFP was benefitting Chile tremendously and should not be halted. However, the economic dependency of Frei’s administration on US dollars resulted in little organic growth. 
+
+Frei’s initial goals in joining the Alliance welcomed foreign direct investment, where he could use these funds to boost rural and urban poor sectors of the economy and expand the private industrial base, as well as reform the tax system. These initiatives were attractive to the US and fit with the mission of the AFP, and if Frei was to succeed, it would provide a powerful image for the US that their involvement in successful reforms in Chile could apply to all of Latin America. Chile was thus noted as a “showcase” example of the AFP. However Johnson’s goals for the AFP had clashing ideals to Frei’s plans, and therefore the US’ priorities in Chile were impractical in the Frei administration. Frei’s overreliance on US aid prevented Chile from becoming a stronger nation, as he was unable to nationalize important industries such as copper.  Due to his desire to continue receiving US aid, if Frei was to nationalize copper he knew the US would cut its stream of funds to Chile. Thus, Frei found himself stuck in a position that was asymmetric with the US, unable to further Chile’s economic and social advancement. 
+
+While the AFP found some success in the realm of education in Chile, it ultimately demonstrated an inability to create legitimate social reform. The numbers of enrolled students greatly increased during Frei’s administration through the usage of AFP funds. New scholarship programs were created, schools were built in rural areas, and teachers were being retrained to fit educational needs. Frei found success in dealing with population growth and ensuring that reforms were being implemented to increase the skill set of Chilean citizens through education and inclusion in the economy. However, because of the dependency of Chile on the US economy, growth was prevented to its full potential and Frei’s reformist policies were overshadowed by his reliance on US aid. Out of fear of instituting reforms that were ‘too radical’ or extreme in the eyes of US businessmen and AFP planners, Frei contained his reforms to fit the ideals of the US and ensure that they would not stray from American interests in Chile. 
+
+Additionally, in the onset of the AFP in Chile, US interests preferred Frei because he was easily manageable compared to Allende, who wanted to enact a program that would redistribute income across socioeconomic sectors. The landowning and business classes in Chile felt threatened by Allende’s proposed policy, and thus the US used this fear as a vehicle for intervening in socioeconomic reform, aligning AFP reform with the upper class. In this process, the US would also be preventing socialism in Chile, targeting another primary foreign policy goal of the US under Kennedy and Johnson. With the US involvement in social reform and its ability to steer Frei against radical social changes, Chile was unable to experience significant growth and had created a negative dependency on the US. 
+
+The Alliance under Kennedy aimed to prevent communism or ‘another Cuba’ in Latin America, however regional differences were unaccounted for and led to the overall insuccess of the Alliance. In Chile, the threat of Allende as a rising socialist power was well-monitored by US officials. The CIA sought to intervene and gain insight on Allende’s proposals to prevent another Castro from coming to power and posing a threat to the US. A memorandum from September of 1964, the month of the presidential election between Frei and Allende, demonstrated clear involvement of the CIA in the Chilean election. It noted that election watchers believed that non-Communist forces would win the 1964 election due to the covert work of the CIA, making it a win for democracy and a blow to communism in the eyes of the US. Covert operations in Chile by the US also presented a full personality analysis of Allende earlier that year, attempting to read his objectives and foreign policy goals. Jova claimed that Allende wanted to enact nationalization programs, land reform, align with underdeveloped countries, and reduce US influence by creating regional military alliance pacts. The US feared that this would bring Chile and the Latin American region closer to Cuba, as well as economically deteriorate Chile as a consequence of nationalization and isolation. 
+
+Another example of the US using the AFP to prevent communism is seen in a memorandum from Bundy to President Johnson, noting Chile’s formal break from Cuban ties in August of 1964. While this was a result of US covert action in Chile, Bundy emphasized that the US could not look as though they interfered in any way in order to protect the image of Frei as a powerful leader promoting democracy and anti-communist efforts. To uphold an image of anti-communism and democracy, the transition of US ambassadors in Chile in late 1964 had extreme importance for US foreign policy goals in relation to the AFP. Bundy believed that the US had to elect an ambassador that would align perfectly with US interests in the country and maintain a good relationship with the Chilean government. 
+
+Covert action used by the US government to prevent communism in the region, specifically in Chile through direct election manipulation in 1964, showcased how the US’ involvement in Chile during the AFP led to negative effects. Because of communist and socialist threats in Chile and in Latin America as a whole following the Cuban crisis, the US sought to use the AFP to garner control in a region that drastically differed politically, economically, and socially. General assumptions of preventing communism and providing aid did not fare equally, leading to the overall failure of the AFP. Following slow growth and lack of effective reform under Frei, Allende rose to power in the 1970 presidential election -- a time when Chile was experiencing high inflation and financial instability. Allende’s inability to recover from the crisis led to his unpopularity and the subsequent military coup in 1973. 
+
+The overreliance on US economic aid, the lack of legitimate domestic social reform, and the use of covert action to intervene in Chile’s politics to prevent communism all contributed to the insuccess of the Alliance for Progress in Chile. Slow economic reform under Frei due to manipulation by US officials, the growing threat of Allende’s communist leanings, and the US’ interests in having a stronger presence in Chile demonstrate why the US felt the need to be involved, despite the consequences resulting from their involvement. The lack of overall understanding of Latin America as a region and the differences between each country’s reform needs was a failure of US foreign policymakers who created the Alliance for Progress. 
+
+
+**Endnotes**
+
+Memorandum From the President’s Special Assistant for National Security Affairs (Bundy) to President Johnson, September 20, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d271)
+
+Memorandum From the President’s Special Assistant for National Security Affairs (Bundy) to President Johnson, August 13, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d265)
+
+Telegram From the Embassy in Chile to the Department of State, April 22, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d251)
+
+Memorandum Prepared in the Central Intelligence Agency, September 1, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d268)
+
+Telegram From the Embassy in Chile to the Department of State, November 13, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d276) 
+
+Information Memorandum From the President’s Special Assistant for National Security Affairs (Bundy) to President Johnson, July 8, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d261)
+
+ Telegram From the Embassy in Chile to the Department of State, July 2, 1964
+(https://history.state.gov/historicaldocuments/frus1964-68v31/d260) 
+
+Chile Breaks Cuban Ties, Carrying Out O.A.S. Ban; President Alessandri Severs Diplomatic Relations in the Face of Threats by Leftists of Street Violence, August 12, 1964
+(https://www.nytimes.com/1964/08/12/archives/chile-breaks-cuban-ties-carrying-out-oas-ban-president-alessandri.html) 
+
+Note on U.S. Covert Actions, NSAM No. 341, March 2, 1966
+(https://history.state.gov/historicaldocuments/frus1964-68v32/pg_XXXV) 
+
+**Bibliography**
+
+Michaels, Albert L. “The Alliance for Progress and Chile's "Revolution in Liberty," 1964-1970.” Journal of Interamerican Studies and World Affairs, Vol. 18, No. 1 (1976), pp. 74-99: https://www.jstor.org/stable/174817. 
+
+Sands, David R. “Chile Under Frei: The Alliance for Progress.” The Fletcher Forum, Vol. 6, No. 1 (1982), pp. 33-60: https://www.jstor.org/stable/45331066. 
+
+Smetherman, Robert M. & Smetherman, Bobbie B. “The Alliance for Progress: Promises Unfulfilled.” The American Journal of Economics and Sociology, Vol. 31, No. 1 (1972), pp. 79-85: https://www.jstor.org/stable/3485582. 
+
+Levinson, Jerome L. “After the Alliance for Progress: Implications for Inter-American Relations.” Proceedings of the Academy of Political Science, Vol. 30, No. 4 (1972), pp. 177-190: https://www.jstor.org/stable/1173181. 

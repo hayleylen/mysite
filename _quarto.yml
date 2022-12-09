@@ -15,7 +15,9 @@ website:
         text: Home
       - about.qmd
       - portfolio.qmd
-      - walkthrough.qmd 
+      - walkthrough.qmd
+      - usfppaper.qmd
+      - Work.qmd
 
 format:
   html:
