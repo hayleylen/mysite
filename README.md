@@ -1,3 +1,3 @@
 # mysite
 
-https://hayleylen.github.io/mysite/
+Live site is found at: https://hayleylen.github.io/mysite/
