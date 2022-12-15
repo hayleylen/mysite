@@ -7,7 +7,7 @@ format:
     code-fold: true
     code-tools: true
 ---
-To begin, I loaded the necessary libraries. 
+This project focuses on walking through the functions portion of a class assignment from Reporting in the Digital Age. To begin, I loaded the necessary libraries to complete the assignment. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -26,7 +26,7 @@ options(tigris_class = "sf")
 
 # Functions
 
-I first created a function that returns the sum of 2 numbers.
+For the first question, I created a function that returns the sum of 2 numbers. To do so, I had to create a function that could work with any numbers put into it. After this, I chose two numbers at random and put them into the function to return the sum. 
 
 ```{r}
 sum_function <- function(number_one, number_two){sum <- number_one + number_two
@@ -34,34 +34,39 @@ return(sum)}
 sum_function(15,9384)
 ```
 
-Next, I created a function that returns the mean of a list of numbers fed to it. 
+Next, I created a function that returns the mean of a list of numbers fed to it. To do so, I created a function that took the sum of three random numbers and then would divide by 3. After this, I created a mean of those three numbers by adding them to the functino I created and was able to calculate that the mean.  
 
 ```{r}
-list_mean <- c(12,53,62,28,16)
-resultmean <- mean(list_mean)
-print(resultmean)
+mean_function <- function(num_list){list_mean <- mean(num_list)
+  return(list_mean)} 
+
+numbers <- c(12,53,62)
+
+mean_function(numbers)
+
 ```
 
-Now, I expanded on the function above and instead of just returning the mean number alone, it returns the sentence: "The mean is ___". (Where the blank is the mean.)
+Now, I expanded on the mean function above and instead of just returning the mean number alone, it returns the sentence: "The mean is ___". (Where the blank is the mean.) 
 
 ```{r}
-list_mean <- c(12,53,62,28,16)
+numbers <- c(12,53,62)
 
-result_mean_print <- function(list_mean){
-  result <- paste0("The mean is ", mean(list_mean), ".") 
+result_mean_print <- function(numbers){
+  result <- paste0("The mean is ", mean(numbers), ".") 
   return(result)}
 
-result_mean_print(list_mean)
+result_mean_print(numbers)
 ```
 
-For the next two questions, I use the `flights` dataset from the package `nycflights13`. It contains records of individual airline flights departing at New York's three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). Run the following chunk to load the data. 
+For the next two questions, I use the `flights` dataset from the package `nycflights13`. It contains records of individual airline flights departing at New York's three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). I ahd to load the sets below for the remaineder of the assignment. 
 
 ```{r}
 #load the data to use for the rest of the assignment questions
 flights <- nycflights13::flights
 head(flights)
 ```
-4) Using the `flights` dataset, I created a function that filters the data frame to only include records from a single originating airport (column name `origin`). 
+
+Using the `flights` dataset, I created a function that filters the data frame to only include records from a single originating airport (column name `origin`). I decided to use JFK, so I first created a function that would sort through the originating airports and filter them by name. Then, because I only wanted records from JFK, I placed 'JFK' into the function to only show those records. 
 
 ```{r}
 flight_df <- function(origin_name){records <- flights %>%
@@ -70,7 +75,7 @@ return(records)}
 flight_df("JFK")
 ```
 
-Similarly, using the `flights` dataset, I created a function that filters the data frame to only include records from a single originating airport (column name `origin`), and then aggregates (i.e. counts) the results by airline (`carrier`) to show how many flights each airline has from that airport.
+Similarly, using the `flights` dataset, I created a function that filters the data frame to only include records from a single originating airport (column name `origin`), and then aggregates (i.e. counts) the results by airline (`carrier`) to show how many flights each airline has from that airport. Essentially, I just added on to my previous function by counting the results by airline (again, in my case, counting flight records at JFK).  
 
 ```{r}
 airport_df <- function(origin_name){
@@ -81,3 +86,5 @@ airport_df <- function(origin_name){
   return(records)}
 airport_df("JFK")
 ```
+
+This was the final part of the functions assignment, where I was able to learn how to create a function in R and use it in context. 

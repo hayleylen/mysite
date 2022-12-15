@@ -18,6 +18,8 @@ website:
       - walkthrough.qmd
       - usfppaper.qmd
       - Work.qmd
+      - resume.qmd
+      - Virginia.qmd
 
 format:
   html:
