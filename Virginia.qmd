@@ -7,3 +7,106 @@ format:
     code-fold: true
     code-tools: true
 ---
+
+## Virginia Election Analysis ##
+
+#The data presented below is designed to showcase a joined comparison of Virginia election results for President and Governor in 2020. There are columns for Biden, Trump, Youngkin, and McAuliffe and their favorability within different localities in Virginia. 
+
+#To begin analyzing the data, I had to load the necessary libraries that would help me sort through and conduct specific code. Below you can see the exact libraries that I loaded before beginning the project.  
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(janitor)
+library(httr)
+library(jsonlite)
+library(kableExtra)
+library(here)
+options(scipen = 999)
+options(stringsAsFactors = FALSE)
+
+#loaded data set
+
+joined_vacomparison <- readRDS(here("processed_data", "joined_vacomparison.rds"))
+
+```
+
+#To explore the Virginia election results data on your own, here is a data table showing the joined comparison. To create the table, I simply used the DT tool and inputted the data set comparing governor and presidential candidates. 
+
+```{r}
+head(joined_vacomparison)
+
+DT::datatable(joined_vacomparison)
+```
+
+#Because the data set is a comparison between governor and presidential votes from 2020, I decided to do some cross-analysis. I created a column calculating difference between the percentage of the vote Youngkin receieved compared to the percentage of the vote that Trump receieved. Both Youngkin and Trump were the Republican candidates running in this election cycle. 
+
+#To make this comparison, I first created a new data set to show the vote difference by mutating a new column subtracting the percentage of Youngkin votes and the percentage of Trump votes. This function allowed me to get a number that showed the difference between the two. Then, I made this a new column in a new data table to make it easier to see the outcome. 
+
+```{r}
+vote_difference <- joined_vacomparison %>%
+  mutate(youngkin_over_trump = pct_youngkin - trump_pct) %>% select(locality, pct_youngkin, trump_pct, youngkin_over_trump)
+
+DT::datatable(vote_difference)
+```
+
+#Using the new column I made above, I found the top 5 conuties with the highest differences between the Youngkin/Trump percentage. To do this, I again used the mutate function as before, but this time I arranged the results in descending order to put the highest percentages at the top of the data, and used the head function to cut off the remainder of the counties (they are not relevant in this part of the analysis). 
+
+#To make this look more presentable, I used the ggplot tool to create a bar chart showing the results. As you can see below, There the x axis shows the localities with the top 5 highest differences between the Youngkin/Trump percent, and the y axis has the actual percent values. They are labeled by county. 
+```{r}
+youngkin_pct <- joined_vacomparison %>%
+  mutate(youngkin_over_trump = pct_youngkin - trump_pct) %>% select(locality, pct_youngkin, trump_pct, youngkin_over_trump) %>%
+  arrange(desc(youngkin_over_trump)) %>%
+  head(5)
+
+ggplot(youngkin_pct, aes(x=reorder(locality, youngkin_over_trump), y= youngkin_over_trump)) + geom_col() + scale_y_continuous(name="pct Youngkin over Trump") + scale_x_discrete(name = "localities") + theme(axis.text.x = element_text(angle = 5))
+
+```
+
+#Next, I took the orignial data from the joined comparison data set to specifically focus on Youngkin's votes. I wanted to create a chart showing the top 5 counties where Youngkin got the highest percent of the vote. So, I arranged the original data by descending order based on the highest percentage of Youngkin votes, and then cut it off to only show the top 5. Using this data, I made a ggplot again, but this time just showing the top 5 counties where Youngkin was the favored candidate. 
+
+```{r}
+youngkin_highest_pct <- joined_vacomparison %>% arrange(desc(pct_youngkin)) %>% head(5)
+
+ggplot(youngkin_highest_pct, aes(x=reorder(locality, pct_youngkin), y= pct_youngkin)) + geom_col() + scale_y_continuous(name="pct of Youngkin Vote") + scale_x_discrete(name = "localities") + theme(axis.text.x = element_text(angle = 5))
+
+```
+
+#For this part, I did the same process as above for Youngkin, just switching out Youngkin for McAuliffe. 
+
+```{r}
+mcauliffe_highest_pct <- joined_vacomparison %>% arrange(desc(pct_mcauliffe)) %>% head(5)
+
+ggplot(mcauliffe_highest_pct, aes(x=reorder(locality, pct_mcauliffe), y= pct_mcauliffe)) + geom_col() + scale_y_continuous(name="pct of Mcauliffe Vote") + scale_x_discrete(name = "localities") + theme(axis.text.x = element_text(angle = 5))
+```
+
+#To dig deeper into the analysis, I decided it would be interesting to see Biden's favorability over Trump's based on locality in Virginia. I calculated these falues by comparing the percentages of the vote that both received, and organized it based on Biden having higher vote percentages than Trump. 
+
+#Then, I made another chart to show this data visually, labeling it as Biden's favorability over Trump, by percentage. As you can see, the top 5 counties that favored Biden based on percentage of the vote were Arlington, Falls Church, Richmond, Charlottesvile, and Petersberg. 
+
+```{r}
+biden_favorable <- joined_vacomparison %>%
+  mutate(biden_over_trump = biden_pct - trump_pct) %>% select(locality, biden_pct, trump_pct, biden_over_trump) %>%
+  arrange(desc(biden_over_trump)) %>%
+  head(5)
+
+ggplot(biden_favorable, aes(x=reorder(locality, biden_over_trump), y= biden_over_trump)) + geom_col() + scale_y_continuous(name="Biden Favorability over Trump by %") + scale_x_discrete(name = "localities") + theme(axis.text.x = element_text(angle = 5))
+```
+
+#Similar to my above analysis, I thought it may be interesting to look at the physical numbers of votes per locality that show the difference between Biden and Trump. So, I made a new set of data from the joined comparison data that subtracted the number of votes receieved by Biden and the number of votes receieved by Trump. Then, using this, I made a clear data table with a new column showing this difference. 
+
+```{r}
+vote_difference_bt <- joined_vacomparison %>%
+  mutate(biden_vs_trump = biden - trump) %>% select(locality, biden, trump, biden_vs_trump)
+
+DT::datatable(vote_difference_bt)
+```
+
+#To conclude my Virginia election analysis, I used my previous findings to sort the number of votes based on the highest Biden v. Trump comparison in the top 5 counties. This would show the highest spread in votes between the two, and therefore likely the localities that had a strong preference for Biden over trump in terms of number of votes. Based on the data table below, these counties were Fairfax, Arlington, Richmond, Price William, and Louduon.  
+```{r}
+vote_difference_bt <- joined_vacomparison %>%
+  mutate(biden_vs_trump = biden - trump) %>% select(locality, biden, trump, biden_vs_trump) %>% arrange(desc(biden_vs_trump)) %>%
+  head(5)
+
+DT::datatable(vote_difference_bt)
+```

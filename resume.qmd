@@ -1,8 +1,8 @@
 ---
 title: "Resume"
 format: 
-  html: file:///Users/hayleylenamon/Desktop/Dec%2022%20Resume.pdf 
-    self-contained: false 
+  html:
+    self-contained: true
     code-fold: true
     code-tools: true
 ---

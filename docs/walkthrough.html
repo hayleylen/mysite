@@ -3999,6 +3999,9 @@ vertical-align: -.125em;
     <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="https://docs.google.com/document/d/16sPK7EXfefkuju96H1w8ISSek2f_CSQjXK8OwUxzi9k/edit?usp=sharing">Resume</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html">About</a>
   </li>  
   <li class="nav-item">
@@ -4012,6 +4015,9 @@ vertical-align: -.125em;
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Work.html">Work</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Virginia.html">VA Project</a>
   </li>  
 </ul>
               <div id="quarto-search" class title="Search"></div>
@@ -4057,10 +4063,10 @@ vertical-align: -.125em;
 
 </header>
 
-<p>To begin, I loaded the necessary libraries.</p>
+<p>This project focuses on walking through the functions portion of a class assignment from Reporting in the Digital Age. To begin, I loaded the necessary libraries to complete the assignment.</p>
 <section id="functions" class="level1">
 <h1>Functions</h1>
-<p>I first created a function that returns the sum of 2 numbers.</p>
+<p>For the first question, I created a function that returns the sum of 2 numbers. To do so, I had to create a function that could work with any numbers put into it. After this, I chose two numbers at random and put them into the function to return the sum.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4072,35 +4078,38 @@ vertical-align: -.125em;
 <pre><code>[1] 9399</code></pre>
 </div>
 </div>
-<p>Next, I created a function that returns the mean of a list of numbers fed to it.</p>
+<p>Next, I created a function that returns the mean of a list of numbers fed to it. To do so, I created a function that took the sum of three random numbers and then would divide by 3. After this, I created a mean of those three numbers by adding them to the functino I created and was able to calculate that the mean.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>list_mean <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>,<span class="dv">28</span>,<span class="dv">16</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>resultmean <span class="ot">&lt;-</span> <span class="fu">mean</span>(list_mean)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultmean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(num_list){list_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(num_list)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_mean)} </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_function</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 34.2</code></pre>
+<pre><code>[1] 42.33333</code></pre>
 </div>
 </div>
-<p>Now, I expanded on the function above and instead of just returning the mean number alone, it returns the sentence: “The mean is ___“. (Where the blank is the mean.)</p>
+<p>Now, I expanded on the mean function above and instead of just returning the mean number alone, it returns the sentence: “The mean is ___“. (Where the blank is the mean.)</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>list_mean <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>,<span class="dv">28</span>,<span class="dv">16</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>result_mean_print <span class="ot">&lt;-</span> <span class="cf">function</span>(list_mean){</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;The mean is &quot;</span>, <span class="fu">mean</span>(list_mean), <span class="st">&quot;.&quot;</span>) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>result_mean_print <span class="ot">&lt;-</span> <span class="cf">function</span>(numbers){</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;The mean is &quot;</span>, <span class="fu">mean</span>(numbers), <span class="st">&quot;.&quot;</span>) </span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)}</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">result_mean_print</span>(list_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">result_mean_print</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;The mean is 34.2.&quot;</code></pre>
+<pre><code>[1] &quot;The mean is 42.3333333333333.&quot;</code></pre>
 </div>
 </div>
-<p>For the next two questions, I use the <code>flights</code> dataset from the package <code>nycflights13</code>. It contains records of individual airline flights departing at New York’s three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). Run the following chunk to load the data.</p>
+<p>For the next two questions, I use the <code>flights</code> dataset from the package <code>nycflights13</code>. It contains records of individual airline flights departing at New York’s three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). I ahd to load the sets below for the remaineder of the assignment.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4124,9 +4133,7 @@ vertical-align: -.125em;
 #   ²​dep_delay, ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay</code></pre>
 </div>
 </div>
-<ol start="4" type="1">
-<li>Using the <code>flights</code> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <code>origin</code>).</li>
-</ol>
+<p>Using the <code>flights</code> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <code>origin</code>). I decided to use JFK, so I first created a function that would sort through the originating airports and filter them by name. Then, because I only wanted records from JFK, I placed ‘JFK’ into the function to only show those records.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4155,7 +4162,7 @@ vertical-align: -.125em;
 #   ¹​sched_dep_time, ²​dep_delay, ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay</code></pre>
 </div>
 </div>
-<p>Similarly, using the <code>flights</code> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <code>origin</code>), and then aggregates (i.e. counts) the results by airline (<code>carrier</code>) to show how many flights each airline has from that airport.</p>
+<p>Similarly, using the <code>flights</code> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <code>origin</code>), and then aggregates (i.e. counts) the results by airline (<code>carrier</code>) to show how many flights each airline has from that airport. Essentially, I just added on to my previous function by counting the results by airline (again, in my case, counting flight records at JFK).</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4184,6 +4191,7 @@ vertical-align: -.125em;
 10 VX       3596</code></pre>
 </div>
 </div>
+<p>This was the final part of the functions assignment, where I was able to learn how to create a function in R and use it in context.</p>
 
 
 <!-- -->
@@ -4349,7 +4357,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>To begin, I loaded the necessary libraries. </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>This project focuses on walking through the functions portion of a class assignment from Reporting in the Digital Age. To begin, I loaded the necessary libraries to complete the assignment. </span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
@@ -4368,7 +4376,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Functions</span></span>
 <span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>I first created a function that returns the sum of 2 numbers.</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>For the first question, I created a function that returns the sum of 2 numbers. To do so, I had to create a function that could work with any numbers put into it. After this, I chose two numbers at random and put them into the function to return the sum. </span>
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>sum_function <span class="ot">&lt;-</span> <span class="cf">function</span>(number_one, number_two){sum <span class="ot">&lt;-</span> number_one <span class="sc">+</span> number_two</span>
@@ -4376,53 +4384,60 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="fu">sum_function</span>(<span class="dv">15</span>,<span class="dv">9384</span>)</span>
 <span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>Next, I created a function that returns the mean of a list of numbers fed to it. </span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>Next, I created a function that returns the mean of a list of numbers fed to it. To do so, I created a function that took the sum of three random numbers and then would divide by 3. After this, I created a mean of those three numbers by adding them to the functino I created and was able to calculate that the mean.  </span>
 <span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>list_mean <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>,<span class="dv">28</span>,<span class="dv">16</span>)</span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>resultmean <span class="ot">&lt;-</span> <span class="fu">mean</span>(list_mean)</span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultmean)</span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(num_list){list_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(num_list)</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_mean)} </span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>)</span>
 <span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>Now, I expanded on the function above and instead of just returning the mean number alone, it returns the sentence: &quot;The mean is ___&quot;. (Where the blank is the mean.)</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_function</span>(numbers)</span>
 <span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>list_mean <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>,<span class="dv">28</span>,<span class="dv">16</span>)</span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>result_mean_print <span class="ot">&lt;-</span> <span class="cf">function</span>(list_mean){</span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;The mean is &quot;</span>, <span class="fu">mean</span>(list_mean), <span class="st">&quot;.&quot;</span>) </span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)}</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>Now, I expanded on the mean function above and instead of just returning the mean number alone, it returns the sentence: &quot;The mean is ___&quot;. (Where the blank is the mean.) </span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">53</span>,<span class="dv">62</span>)</span>
 <span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a><span class="fu">result_mean_print</span>(list_mean)</span>
-<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>For the next two questions, I use the <span class="in">`flights`</span> dataset from the package <span class="in">`nycflights13`</span>. It contains records of individual airline flights departing at New York&#39;s three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). Run the following chunk to load the data. </span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a><span class="co">#load the data to use for the rest of the assignment questions</span></span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>flights</span>
-<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flights)</span>
-<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>4) Using the <span class="in">`flights`</span> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <span class="in">`origin`</span>). </span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>flight_df <span class="ot">&lt;-</span> <span class="cf">function</span>(origin_name){records <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(origin <span class="sc">==</span> origin_name) </span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(records)}</span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a><span class="fu">flight_df</span>(<span class="st">&quot;JFK&quot;</span>)</span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>Similarly, using the <span class="in">`flights`</span> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <span class="in">`origin`</span>), and then aggregates (i.e. counts) the results by airline (<span class="in">`carrier`</span>) to show how many flights each airline has from that airport.</span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>airport_df <span class="ot">&lt;-</span> <span class="cf">function</span>(origin_name){</span>
-<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a>  records <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(origin <span class="sc">==</span> origin_name) <span class="sc">%&gt;%</span></span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(carrier)</span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(records)}</span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a><span class="fu">airport_df</span>(<span class="st">&quot;JFK&quot;</span>)</span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>result_mean_print <span class="ot">&lt;-</span> <span class="cf">function</span>(numbers){</span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;The mean is &quot;</span>, <span class="fu">mean</span>(numbers), <span class="st">&quot;.&quot;</span>) </span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)}</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="fu">result_mean_print</span>(numbers)</span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>For the next two questions, I use the <span class="in">`flights`</span> dataset from the package <span class="in">`nycflights13`</span>. It contains records of individual airline flights departing at New York&#39;s three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). I ahd to load the sets below for the remaineder of the assignment. </span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="co">#load the data to use for the rest of the assignment questions</span></span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>flights</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flights)</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>Using the <span class="in">`flights`</span> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <span class="in">`origin`</span>). I decided to use JFK, so I first created a function that would sort through the originating airports and filter them by name. Then, because I only wanted records from JFK, I placed &#39;JFK&#39; into the function to only show those records. </span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>flight_df <span class="ot">&lt;-</span> <span class="cf">function</span>(origin_name){records <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(origin <span class="sc">==</span> origin_name) </span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(records)}</span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="fu">flight_df</span>(<span class="st">&quot;JFK&quot;</span>)</span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>Similarly, using the <span class="in">`flights`</span> dataset, I created a function that filters the data frame to only include records from a single originating airport (column name <span class="in">`origin`</span>), and then aggregates (i.e. counts) the results by airline (<span class="in">`carrier`</span>) to show how many flights each airline has from that airport. Essentially, I just added on to my previous function by counting the results by airline (again, in my case, counting flight records at JFK).  </span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>airport_df <span class="ot">&lt;-</span> <span class="cf">function</span>(origin_name){</span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>  records <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(origin <span class="sc">==</span> origin_name) <span class="sc">%&gt;%</span></span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(carrier)</span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(records)}</span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="fu">airport_df</span>(<span class="st">&quot;JFK&quot;</span>)</span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>This was the final part of the functions assignment, where I was able to learn how to create a function in R and use it in context. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

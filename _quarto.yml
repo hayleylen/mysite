@@ -13,12 +13,13 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: https://github.com/hayleylen/mysite/blob/main/Dec%2022%20Resume.pdf
+        text: Resume
       - about.qmd
       - portfolio.qmd
       - walkthrough.qmd
       - usfppaper.qmd
       - Work.qmd
-      - resume.qmd
       - Virginia.qmd
 
 format:
